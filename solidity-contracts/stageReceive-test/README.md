@@ -9,7 +9,7 @@ We are using the truffle test phase to receive test token contracts.
 
 #### dependencies
 
-node.js v12+
+node.js v12+   
 truffle v5.4.0+
 
 #### testing 
