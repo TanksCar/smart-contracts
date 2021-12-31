@@ -20,7 +20,7 @@ contract Draw{
   mapping (address=>receiveInformation) public receiveData;
   constructor(uint256 _startTime,address _testTokenAddress) {
     startTime = _startTime;//开始时间
-    testTokenAddress = _testTokenAddress;//dfi代币合约地址
+    testTokenAddress = _testTokenAddress;//测试ERC20代币合约地址
   }
   //设置领取mapping映射
   function setReceiveData(address[] calldata addressList,uint256 amount) external returns(bool data){

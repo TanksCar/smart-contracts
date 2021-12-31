@@ -22,7 +22,7 @@ contract('ReceiveDFI',accounts=>{
     assert.isNotNull(ERC20TokenAddress,`deploy failed: ${ERC20Token}`)
   })
 
-  it('Deploy ReceiveDFI contract ',async ()=>{
+  it('Deploy ReceiveTestToken contract ',async ()=>{
     testToken = await receiveDFIToken.new(startTime,ERC20TokenAddress)
       .catch(_=>{
         return null
@@ -30,7 +30,7 @@ contract('ReceiveDFI',accounts=>{
     assert.isNotNull(testToken,`deploy failed :${testToken}`)
   })
 
-  it('Deploying the ReceiveDFI contract, lack of parameters',async ()=>{
+  it('Deploying the ReceiveTestToken contract, lack of parameters',async ()=>{
     nullToken = await receiveDFIToken.new(startTime)
       .catch(_=>{
         return null
@@ -57,7 +57,7 @@ contract('ReceiveDFI',accounts=>{
     assert.equal(noReceiveStage,0,`Failed in the user claim phase:${noReceiveStage}`)
   })
 
-  it('not the start time Receive DFI',async ()=>{
+  it('not the start time Receive testToken',async ()=>{
     let testNotStartTimeToken = await receiveDFIToken.new(JSON.stringify(setExtensionTime) ,'0x95Acc35cA9087aCF4c165346291a429D541Fa5EA')
       .catch(_=>{
         return null
@@ -75,7 +75,7 @@ contract('ReceiveDFI',accounts=>{
     assert.equal(receiveDFI,'Please enter the correct account address',`Failed in the user claim phase:${receiveDFI}`)
   })
 
-  it('Successfully receive DFI',async ()=>{
+  it('Successfully receive testToken',async ()=>{
     let receiveDFI = await testToken.receiveDFI('0xd49c38C6CBaCc98444930C4524Dff73e67cA2e39').catch((res)=>{
       return null
     })
